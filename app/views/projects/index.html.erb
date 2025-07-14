@@ -1,0 +1,28 @@
+<div class="p-4 w-1/2 mx-auto">
+  <h1 class="mb-4">Projects</h1>
+  <div data-controller="hello"></div>
+  <div class="mb-6">
+    <%= link_to "New Project",
+      new_project_path,
+      class: "px-3 py-2 bg-green-500 text-white rounded" %>
+  </div>
+
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th class="px-4 py-2">Name</th>
+        <th class="px-4 py-2">Tasks Number</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 cursor-pointer" 
+            onclick="Turbo.visit('<%= project_path(project) %>')">
+          <td class="px-4 py-2"><%= project.name %></td>
+          <td class="px-4 py-2"><%= project.hill_tasks.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

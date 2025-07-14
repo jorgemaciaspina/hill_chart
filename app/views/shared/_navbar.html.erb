@@ -1,0 +1,17 @@
+<nav class="bg-gray-800">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="flex h-16 items-center justify-between">
+      <!-- App title or logo -->
+      <div class="flex-shrink-0">
+        <a href="<%= root_path %>" class="text-white text-xl font-semibold">HillChart</a>
+      </div>
+
+      <!-- Navigation links -->
+      <div class="flex space-x-4">
+        <%= link_to "Projects",
+            projects_path,
+            class: "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700" %>
+      </div>
+    </div>
+  </div>
+</nav>

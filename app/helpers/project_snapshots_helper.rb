@@ -1,0 +1,2 @@
+module ProjectSnapshotsHelper
+end

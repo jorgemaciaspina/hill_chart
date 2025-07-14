@@ -1,0 +1,12 @@
+<h2 class="mt-8 text-lg font-semibold">Historic Snapshots</h2>
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <% project_snapshots.each do |snap| %>
+    <div class="border p-2">
+      <small class="text-gray-500"><%= snap.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+      <div class="overflow-auto">
+        <%= raw snap.svg_data %>
+      </div>
+    </div>
+  <% end %>
+</div>

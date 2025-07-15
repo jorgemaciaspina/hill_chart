@@ -8,9 +8,18 @@
 
       <!-- Navigation links -->
       <div class="flex space-x-4">
-        <%= link_to "Projects",
-            projects_path,
-            class: "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700" %>
+        <% if session[:user] %>
+          <%= link_to "Projects",
+              projects_path,
+              class: "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700" %>
+
+        
+          <%= link_to "Logout",
+              logout_path,
+              method: :delete,
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+              class: "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700" %>
+        <% end %>
       </div>
     </div>
   </div>
